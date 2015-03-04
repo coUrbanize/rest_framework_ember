@@ -27,7 +27,7 @@ class GenericViewSet(TestBase):
             }
         )
 
-    def test_ember_expected_renderer(self):
+    def test_expected_renderer(self):
         """
         The :class:`UserEmber` ViewSet has the ``resource_name`` of 'data'
         so that should be the key in the JSON response.

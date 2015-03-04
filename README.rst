@@ -70,7 +70,7 @@ From PyPI
 
 ::
 
-    pip install rest_framework_ember
+    pip install django_json_api
 
 
 From Source
@@ -78,8 +78,8 @@ From Source
 
 ::
 
-    $ git clone https://github.com/django-json-api/rest_framework_ember.git
-    $ cd rest_framework_ember && pip install -e .
+    $ git clone https://github.com/django-json-api/django_json_api.git
+    $ cd django_json_api && pip install -e .
 
 
 Running Tests
@@ -95,15 +95,15 @@ Usage
 -----
 
 
-``rest_framework_ember`` assumes you are using class-based views in Django
+``django_json_api`` assumes you are using class-based views in Django
 Rest Framework.
 
 
 Settings
 ^^^^^^^^
 
-One can either add ``rest_framework_ember.parsers.JSONParser`` and
-``rest_framework_ember.renderers.JSONRenderer`` to each ``ViewSet`` class, or
+One can either add ``django_json_api.parsers.JSONParser`` and
+``django_json_api.renderers.JSONRenderer`` to each ``ViewSet`` class, or
 override ``settings.REST_FRAMEWORK``::
 
 
@@ -112,14 +112,14 @@ override ``settings.REST_FRAMEWORK``::
         'PAGINATE_BY_PARAM': 'page_size',
         'MAX_PAGINATE_BY': 100,
         'DEFAULT_PAGINATION_SERIALIZER_CLASS':
-            'rest_framework_ember.pagination.PaginationSerializer',
+            'django_json_api.pagination.PaginationSerializer',
         'DEFAULT_PARSER_CLASSES': (
-            'rest_framework_ember.parsers.JSONParser',
+            'django_json_api.parsers.JSONParser',
             'rest_framework.parsers.FormParser',
             'rest_framework.parsers.MultiPartParser'
         ),
         'DEFAULT_RENDERER_CLASSES': (
-            'rest_framework_ember.renderers.JSONRenderer',
+            'django_json_api.renderers.JSONRenderer',
             'rest_framework.renderers.BrowsableAPIRenderer',
         ),
     }
@@ -307,7 +307,7 @@ Mixins
 The following mixin classes are available to use with Rest Framework
 resources.
 
-rest_framework_ember.mixins.MultipleIDMixin
+django_json_api.mixins.MultipleIDMixin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Overrides ``get_queryset`` to filter by ``ids[]`` in URL query params.

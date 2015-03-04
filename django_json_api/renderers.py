@@ -3,7 +3,7 @@ import inflection
 from django.conf import settings
 
 from rest_framework import renderers
-from rest_framework_ember.utils import get_resource_name
+from django_json_api.utils import get_resource_name
 
 from .utils import format_keys, format_resource_name
 

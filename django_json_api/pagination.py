@@ -2,7 +2,7 @@ from rest_framework import serializers
 from rest_framework import pagination
 from rest_framework.templatetags.rest_framework import replace_query_param
 
-from rest_framework_ember.utils import get_resource_name
+from django_json_api.utils import get_resource_name
 
 # DRF 2.4.X compatibility.
 ReadOnlyField = getattr(serializers, 'ReadOnlyField', serializers.Field)
