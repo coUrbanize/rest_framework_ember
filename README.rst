@@ -2,8 +2,8 @@
 Ember Data and Django Rest Framework
 ====================================
 
-.. image:: https://travis-ci.org/ngenworks/rest_framework_ember.svg?branch=master
-   :target: https://travis-ci.org/ngenworks/rest_framework_ember
+.. image:: https://travis-ci.org/django-json-api/rest_framework_ember.svg?branch=master
+   :target: https://travis-ci.org/django-json-api/rest_framework_ember
 
 The default Ember Data REST Adapter conventions differ from the default
 Django Rest Framework JSON request and response format. Instead of adding
@@ -78,7 +78,7 @@ From Source
 
 ::
 
-    $ git clone https://github.com/ngenworks/rest_framework_ember.git
+    $ git clone https://github.com/django-json-api/rest_framework_ember.git
     $ cd rest_framework_ember && pip install -e .
 
 
