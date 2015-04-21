@@ -1,14 +1,14 @@
-====================================
-Ember Data and Django Rest Framework
-====================================
+===========================================
+Django Rest Framework and the JSON API spec
+===========================================
 
-.. image:: https://travis-ci.org/django-json-api/rest_framework_ember.svg?branch=master
+.. image:: https://travis-ci.org/django-json-api/rest_framework_ember.svg?branch=json-api
    :target: https://travis-ci.org/django-json-api/rest_framework_ember
 
-The default Ember Data REST Adapter conventions differ from the default
-Django Rest Framework JSON request and response format. Instead of adding
-a Django specific adapter to Ember Data we use this adapter in Django to
-output and accept JSON in the format the Ember Data REST Adapter expects.
+This adapter was originally born of a desire to have the Django REST Framework
+generate and consume JSON in a format that was understood by Ember Data out of
+the "box". Since Ember Data has now moved to the jsonapi.org specification
+this adapter aims to support JSON API v1.0
 
 By default, Django REST Framework will produce a response like::
 
@@ -33,23 +33,31 @@ However, for an ``identity`` model in EmberJS, the Ember Data REST Adapter
 expects a response to look like the following::
 
     {
-        "identity": [
+        "data": [
             {
+                "type": "identities",
                 "id": 1,
                 "username": "john",
-                "full_name": "John Coltrane"
+                "full_name": "John Coltrane",
+                "links": {
+                    "self": "http://example.com/api/1.0/identities/1/",
+                }
             },
             {
                 ...
             }
         ],
+        "links": {
+            "self": "http://example.com/api/1.0/identities/?page=2",
+            "previous": "http://example.com/api/1.0/identities/?page=1",
+            "next": "http://example.com/api/1.0/identities/?page=3",
+            "last": "http://example.com/api/1.0/identities/?page=10"
+        },
         "meta": {
             "count": 20,
             "next": 2,
-            "next_link": "http://example.com/api/1.0/identities/?page=2",
             "page": 1,
-            "previous": null,
-            "previous_link": null
+            "previous": null
         }
     }
 
