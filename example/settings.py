@@ -33,7 +33,7 @@ PASSWORD_HASHERS = ('django.contrib.auth.hashers.UnsaltedMD5PasswordHasher', )
 
 MIDDLEWARE_CLASSES = ()
 
-rest_framework_3 = {
+REST_FRAMEWORK_3 = {
     'PAGINATE_BY': 1,
     'PAGINATE_BY_PARAM': 'page_size',
     'MAX_PAGINATE_BY': 100,
