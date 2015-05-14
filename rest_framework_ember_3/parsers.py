@@ -1,8 +1,8 @@
 """
 Parsers
 """
-from rest_framework import parsers
-from rest_framework_ember.utils import get_resource_name
+from rest_framework_3 import parsers
+from rest_framework_ember_3.utils import get_resource_name
 
 from .utils import format_keys
 

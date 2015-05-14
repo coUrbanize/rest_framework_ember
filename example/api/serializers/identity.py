@@ -1,5 +1,5 @@
 from django.contrib.auth import models as auth_models
-from rest_framework import serializers
+from rest_framework_3 import serializers
 
 
 class IdentitySerializer(serializers.ModelSerializer):

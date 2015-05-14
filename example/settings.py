@@ -21,7 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.auth',
     'django.contrib.admin',
-    'rest_framework',
+    'rest_framework_3',
     'example.api',
 ]
 
@@ -33,24 +33,24 @@ PASSWORD_HASHERS = ('django.contrib.auth.hashers.UnsaltedMD5PasswordHasher', )
 
 MIDDLEWARE_CLASSES = ()
 
-REST_FRAMEWORK = {
+rest_framework_3 = {
     'PAGINATE_BY': 1,
     'PAGINATE_BY_PARAM': 'page_size',
     'MAX_PAGINATE_BY': 100,
     # DRF v3.1+
     'DEFAULT_PAGINATION_CLASS':
-        'rest_framework_ember.pagination.PageNumberPagination',
+        'rest_framework_ember_3.pagination.PageNumberPagination',
     # DRF v3.0 and older
     'DEFAULT_PAGINATION_SERIALIZER_CLASS':
-        'rest_framework_ember.pagination.PaginationSerializer',
+        'rest_framework_ember_3.pagination.PaginationSerializer',
     'DEFAULT_PARSER_CLASSES': (
-        'rest_framework_ember.parsers.JSONParser',
-        'rest_framework.parsers.FormParser',
-        'rest_framework.parsers.MultiPartParser'
+        'rest_framework_ember_3.parsers.JSONParser',
+        'rest_framework_3.parsers.FormParser',
+        'rest_framework_3.parsers.MultiPartParser'
     ),
     'DEFAULT_RENDERER_CLASSES': (
-        'rest_framework_ember.renderers.JSONRenderer',
-        'rest_framework.renderers.JSONRenderer',
-        'rest_framework.renderers.BrowsableAPIRenderer',
+        'rest_framework_ember_3.renderers.JSONRenderer',
+        'rest_framework_3.renderers.JSONRenderer',
+        'rest_framework_3.renderers.BrowsableAPIRenderer',
     ),
 }

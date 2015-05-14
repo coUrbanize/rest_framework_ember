@@ -1,6 +1,6 @@
 
 from django.contrib.auth import get_user_model
-from rest_framework.test import APITestCase
+from rest_framework_3.test import APITestCase
 
 
 class TestBase(APITestCase):

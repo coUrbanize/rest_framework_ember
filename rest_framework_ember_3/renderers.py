@@ -1,8 +1,8 @@
 """
 Renderers
 """
-from rest_framework import renderers
-from rest_framework_ember.utils import get_resource_name
+from rest_framework_3 import renderers
+from rest_framework_ember_3.utils import get_resource_name
 
 from .utils import format_keys, format_resource_name
 
