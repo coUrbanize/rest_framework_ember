@@ -2,8 +2,8 @@
 Ember Data and Django Rest Framework
 ====================================
 
-.. image:: https://travis-ci.org/django-json-api/rest_framework_ember.svg?branch=master
-   :target: https://travis-ci.org/django-json-api/rest_framework_ember
+.. image:: https://travis-ci.org/django-json-api/rest_framework_ember_3.svg?branch=master
+   :target: https://travis-ci.org/django-json-api/rest_framework_ember_3
 
 The default Ember Data REST Adapter conventions differ from the default
 Django Rest Framework JSON request and response format. Instead of adding
@@ -70,7 +70,7 @@ From PyPI
 
 ::
 
-    pip install rest_framework_ember
+    pip install rest_framework_ember_3
 
 
 From Source
@@ -78,8 +78,8 @@ From Source
 
 ::
 
-    $ git clone https://github.com/ngenworks/rest_framework_ember.git
-    $ cd rest_framework_ember && pip install -e .
+    $ git clone https://github.com/ngenworks/rest_framework_ember_3.git
+    $ cd rest_framework_ember_3 && pip install -e .
 
 
 Running Tests
@@ -95,36 +95,36 @@ Usage
 -----
 
 
-``rest_framework_ember`` assumes you are using class-based views in Django
+``rest_framework_ember_3`` assumes you are using class-based views in Django
 Rest Framework.
 
 
 Settings
 ^^^^^^^^
 
-One can either add ``rest_framework_ember.parsers.JSONParser`` and
-``rest_framework_ember.renderers.JSONRenderer`` to each ``ViewSet`` class, or
-override ``settings.REST_FRAMEWORK``::
+One can either add ``rest_framework_ember_3.parsers.JSONParser`` and
+``rest_framework_ember_3.renderers.JSONRenderer`` to each ``ViewSet`` class, or
+override ``settings.rest_framework_3``::
 
 
-    REST_FRAMEWORK = {
+    REST_FRAMEWORK_3 = {
         'PAGINATE_BY': 10,
         'PAGINATE_BY_PARAM': 'page_size',
         'MAX_PAGINATE_BY': 100,
         # DRF v3.1+
         'DEFAULT_PAGINATION_CLASS':
-            'rest_framework_ember.pagination.PageNumberPagination',
+            'rest_framework_ember_3.pagination.PageNumberPagination',
         # older than DRF v3.1
         'DEFAULT_PAGINATION_SERIALIZER_CLASS':
-            'rest_framework_ember.pagination.PaginationSerializer',
+            'rest_framework_ember_3.pagination.PaginationSerializer',
         'DEFAULT_PARSER_CLASSES': (
-            'rest_framework_ember.parsers.JSONParser',
-            'rest_framework.parsers.FormParser',
-            'rest_framework.parsers.MultiPartParser'
+            'rest_framework_ember_3.parsers.JSONParser',
+            'rest_framework_3.parsers.FormParser',
+            'rest_framework_3.parsers.MultiPartParser'
         ),
         'DEFAULT_RENDERER_CLASSES': (
-            'rest_framework_ember.renderers.JSONRenderer',
-            'rest_framework.renderers.BrowsableAPIRenderer',
+            'rest_framework_ember_3.renderers.JSONRenderer',
+            'rest_framework_3.renderers.BrowsableAPIRenderer',
         ),
     }
 
@@ -136,7 +136,7 @@ subsets of the data with ``this.store.find('identity', {page: 2});``.
 resource_name property
 ^^^^^^^^^^^^^^^^^^^^^^
 
-On resources that do not subclass ``rest_framework.viewsets.ModelViewSet``,
+On resources that do not subclass ``rest_framework_3.viewsets.ModelViewSet``,
 the ``resource_name`` property is required on the class::
 
     class Me(generics.GenericAPIView):
@@ -156,7 +156,7 @@ Ember Data <-> Rest Framework Format Conversion
 *(camelization/underscore/pluralize)*
 
 This package includes the optional ability to automatically convert json requests
-and responses from the Ember Data camelCase to python/rest_framework's preferred
+and responses from the Ember Data camelCase to python/rest_framework_3's preferred
 underscore. Additionally resource names can be pluralized when an array of objects
 are returned. To hook this up include the following in your project settings::
 
@@ -311,7 +311,7 @@ Mixins
 The following mixin classes are available to use with Rest Framework
 resources.
 
-rest_framework_ember.mixins.MultipleIDMixin
+rest_framework_ember_3.mixins.MultipleIDMixin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Overrides ``get_queryset`` to filter by ``ids[]`` in URL query params.

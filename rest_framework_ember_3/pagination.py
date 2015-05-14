@@ -4,10 +4,10 @@ Pagination fields
 # pylint: disable=no-init, too-few-public-methods, no-self-use
 
 
-from rest_framework import serializers
-from rest_framework import pagination
-from rest_framework.views import Response
-from rest_framework.templatetags.rest_framework import replace_query_param
+from rest_framework_3 import serializers
+from rest_framework_3 import pagination
+from rest_framework_3.views import Response
+from rest_framework_3.templatetags.rest_framework_3 import replace_query_param
 
 # DRF 2.4.X compatibility.
 ReadOnlyField = getattr(serializers, 'ReadOnlyField', serializers.Field)

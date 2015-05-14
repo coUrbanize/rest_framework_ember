@@ -7,7 +7,7 @@ from django.conf import settings
 from django.utils import six
 
 try:
-    from rest_framework.compat import OrderedDict
+    from rest_framework_3.compat import OrderedDict
 except ImportError:
     OrderedDict = dict
 

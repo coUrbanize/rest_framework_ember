@@ -2,7 +2,7 @@
 Example app URLs
 """
 from django.conf.urls import patterns, include, url
-from rest_framework import routers
+from rest_framework_3 import routers
 from .resources.identity import Identity, GenericIdentity
 
 router = routers.DefaultRouter(trailing_slash=False)

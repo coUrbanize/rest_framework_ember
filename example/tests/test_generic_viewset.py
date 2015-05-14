@@ -8,7 +8,7 @@ class GenericViewSet(TestBase):
     """
     Test expected responses coming from a Generic ViewSet
     """
-    def test_default_rest_framework_behavior(self):
+    def test_default_rest_framework_3_behavior(self):
         """
         This is more of an example really, showing default behavior
         """
