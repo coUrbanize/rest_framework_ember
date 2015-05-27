@@ -33,6 +33,7 @@ class JSONRenderer(renderers.JSONRenderer):
             content = data.pop('results')
             resource_name = format_resource_name(content, resource_name)
             data = {resource_name : content, "meta" : data}
+            renderer_context['response'].data = data
         except (TypeError, KeyError, AttributeError) as e:
 
             # Default behavior
