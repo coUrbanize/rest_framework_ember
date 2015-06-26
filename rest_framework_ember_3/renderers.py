@@ -20,10 +20,14 @@ class JSONRenderer(renderers.JSONRenderer):
     }
     """
     def render(self, data, accepted_media_type=None, renderer_context=None):
-        view = renderer_context.get('view')
-        resource_name = get_resource_name(view)
+        try:
+            view = renderer_context.get('view')
+        except AttributeError:
+            resource_name = False
+        else:
+            resource_name = get_resource_name(view)
 
-        if resource_name == False:
+        if resource_name is not False:
             return super(JSONRenderer, self).render(
                 data, accepted_media_type, renderer_context)
 
